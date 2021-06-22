@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class MyWindow extends JFrame implements ActionListener{
 
     private JButton button;
-    private volatile int counter;
+    private static volatile int counter;
     private Object object ;
 
     MyWindow(String title){
@@ -44,9 +44,9 @@ public class MyWindow extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        synchronized (object){
+       /* synchronized (object){
             counter++;
-        }
+        }*/
 
         new MyWindow("Hello : "+ counter);
       /*  (*//*new Thread(a)).start();*/
